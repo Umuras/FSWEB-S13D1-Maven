@@ -12,7 +12,10 @@ public class Main {
     }
 
     public static boolean shouldWakeUp(boolean isBarking, int clock) {
-        if(isBarking && clock >= 0 && clock <=23) {
+        //Akşam 20 Sabah 8 arasında havlamalı 20 ve 8 olursa false olacak
+        if(isBarking && clock > 20 && clock < 24) {
+            return true;
+        }else if(isBarking && clock > 0 && clock < 8){
             return true;
         }else{
             return false;
